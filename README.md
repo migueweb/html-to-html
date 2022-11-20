@@ -1,5 +1,5 @@
 # HTML to HTML
-If you have ever tried to display HTML code as plain text on a page you will have noticed that it is displayed as an HTML component, and to display it you need to replace "<" with "&‎lt;" in all tags but now you can do it automatically with [HTML to HTML](https://migueweb.github.com/html-to-html).
+If you have ever tried to display HTML code as plain text on a page you will have noticed that it is displayed as an HTML component, and to display it you need to replace "<" with "&‎lt;" in all tags but now you can do it automatically with [HTML to HTML](https://migueweb.github.io/html-to-html).
 
 
 
