@@ -1,36 +1,40 @@
-const btnConvert = document.getElementById('btnConvert')
-const btnReset = document.getElementById('btnReset')
-const btnCopy = document.getElementById('btnCopy')
-const output = document.getElementById('output')
-const replaceSpaces = document.getElementById('replaceSpaces')
-const replaceLineBreak = document.getElementById('replaceLineBreak')
+const getElement = (id) => document.querySelector(`#${id}`)
+
+const btnConvert = getElement('btnConvert')
+const btnReset = getElement('btnReset')
+const btnCopy = getElement('btnCopy')
+const replaceSpaces = getElement('replaceSpaces')
+const replaceLineBreak = getElement('replaceLineBreak')
+const htmlInput = getElement('htmlInput')
+const output = getElement('output')
+
 
 function convert() {
-    let input = document.getElementById('htmlInput').value
+    let inputCode = htmlInput.value
     
-    input = input.replaceAll("<", "&lt;")
-    input = input.replaceAll(">","&gt;")
+    inputCode = inputCode.replaceAll('<', '&lt;')
+    inputCode = inputCode.replaceAll('>', '&gt;')
     
-    if(replaceSpaces.checked === true){
-        input = input.replaceAll(" ", "&nbsp")
+    if(replaceSpaces.checked){
+        inputCode = inputCode.replaceAll(' ', '&nbsp')
     }
-    if(replaceLineBreak.checked === true){  
-        input = input.replaceAll(/(?:\r\n|\r|\n)/g,"<br>")
+    if(replaceLineBreak.checked){  
+        inputCode = inputCode.replaceAll(/(?:\r\n|\r|\n)/g, '<br>')
     }
     
-    output.value = input
+    output.value = inputCode
 }
 
 function copyCode(){
-    navigator.clipboard.writeText(document.getElementById('output').value);
+    navigator.clipboard.writeText(output.value);
 }
 
 function reset(){
-    document.getElementById('htmlInput').value = ""
-    document.getElementById('output').value = ""
+    htmlInput.value = ''
+    output.value = ''
 }
 
 // Events
-btnConvert.addEventListener("click", convert)
-btnCopy.addEventListener("click", copyCode)
-btnReset.addEventListener("click", reset)
+btnConvert.addEventListener('click', convert)
+btnCopy.addEventListener('click', copyCode)
+btnReset.addEventListener('click', reset)
