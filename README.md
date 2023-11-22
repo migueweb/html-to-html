@@ -26,4 +26,3 @@ HTML to HTML is a tool to convert HTML, SVG, XML code to plain text in a HTML pa
 ## Author
 Miguel Amador
 - Github: [@migueweb](https://github.com/migueweb)
-- Linkedin: [@miguel-amador-dev](https://linkedin.com/in/miguel-amador-dev)
